@@ -1,0 +1,206 @@
+/* --- TỔNG THỂ --- */
+.container {
+  /* Sử dụng màu xám carbon sâu kết hợp Gradient để tạo chiều sâu */
+  background: radial-gradient(circle at center, #1e252b 0%, #0f1215 100%);
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.item2 {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+/* --- TIÊU ĐỀ HẦM HỐ --- */
+.heroHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.glitchTitle {
+  font-size: 3.5rem;
+  font-weight: 950;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #fff 0%, #888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+.accentBar {
+  width: 120px;
+  height: 5px;
+  background: #ff4b2b;
+  margin: 15px auto;
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+/* --- LƯỚI SẢN PHẨM --- */
+.mainContent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* --- THẺ SẢN PHẨM CHI TIẾT --- */
+.productCard {
+  background: rgba(35, 42, 50, 0.6);
+  backdrop-filter: blur(12px); /* Hiệu ứng kính mờ chuyên nghiệp */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Họa tiết đường kẻ cơ khí chạy ngầm phía sau card */
+.productCard::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 15px);
+  pointer-events: none;
+}
+
+.productCard:hover {
+  transform: translateY(-15px);
+  border-color: #ff4b2b;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 75, 43, 0.2);
+}
+
+/* KHU VỰC ẢNH */
+.imageArea {
+  position: relative;
+  background: #ffffff; /* Giữ nền trắng để mô hình Gundam nổi bật nhất */
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.topLabel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #111;
+  color: #ff4b2b;
+  padding: 5px 12px;
+  font-size: 10px;
+  font-weight: 900;
+  border-radius: 4px;
+  border-left: 3px solid #ff4b2b;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.mainImg {
+  transition: transform 0.6s ease;
+}
+
+.productCard:hover .mainImg {
+  transform: scale(1.1);
+}
+
+/* THÔNG TIN SẢN PHẨM */
+.infoArea {
+  padding-top: 25px;
+}
+
+.pName {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  height: 50px;
+  text-transform: uppercase;
+}
+
+.priceSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.currentPrice {
+  color: #ff4b2b;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.discountBadge {
+  background: rgba(255, 75, 43, 0.1);
+  color: #ff4b2b;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid rgba(255, 75, 43, 0.3);
+}
+
+.oldPrice {
+  color: #666;
+  text-decoration: line-through;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* HIỆU ỨNG CHẤM XANH ĐANG HOẠT ĐỘNG */
+.stockStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 25px;
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff88;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* NÚT MUA HÀNG */
+.actionBtn {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  background: #ff4b2b;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 900;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.4s;
+}
+
+.actionBtn:hover {
+  background: #fff;
+  color: #ff4b2b;
+  box-shadow: 0 0 30px #fff;
+  transform: scale(1.02);
+}
+
+/* TỔNG THỂ RESPONSIVE */
+@media (max-width: 1024px) {
+  .mainContent { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 650px) {
+  .mainContent { grid-template-columns: 1fr; }
+  .glitchTitle { font-size: 2.2rem; }
+}
